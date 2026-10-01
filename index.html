@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101214">
+  <title>BookLendingTracker — Private Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast-root"></div>
+
+  <div id="onboarding" class="overlay hidden">
+    <div class="onboarding-card">
+      <div class="onboarding-art">📚</div>
+      <div id="onboarding-content"></div>
+      <div class="onboarding-dots" id="onboarding-dots"></div>
+      <div class="onboarding-actions">
+        <button class="btn btn-ghost" id="skip-onboarding">Skip</button>
+        <button class="btn btn-primary" id="next-onboarding">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">B</div>
+        <div><strong>BookLendingTracker</strong><span>Private library</span></div>
+      </div>
+      <nav id="side-nav">
+        <button data-page="home" class="nav-item active"><span>⌂</span> Home</button>
+        <button data-page="books" class="nav-item"><span>▣</span> My Books</button>
+        <button data-page="add" class="nav-item"><span>＋</span> Add Book</button>
+        <button data-page="outside" class="nav-item"><span>↗</span> Outside Books</button>
+        <button data-page="friends" class="nav-item"><span>♧</span> Friends</button>
+        <button data-page="prebookings" class="nav-item"><span>◇</span> Pre-bookings</button>
+        <button data-page="notifications" class="nav-item"><span>◔</span> Notifications <b id="nav-notification-count" class="nav-count hidden">0</b></button>
+        <button data-page="buddy" class="nav-item"><span>✦</span> Book Buddy</button>
+        <button data-page="history" class="nav-item"><span>↺</span> History</button>
+        <button data-page="settings" class="nav-item"><span>⚙</span> Settings</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="privacy-chip">🔒 Friends-only library</div>
+        <div class="mini-profile"><div class="avatar">N</div><div><b>Nidhi</b><span>Owner</span></div></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu">☰</button>
+        <div class="breadcrumbs" id="page-title">Home</div>
+        <div class="top-actions">
+          <button class="icon-btn" data-page="notifications" title="Notifications">◔<b id="top-notification-dot" class="dot hidden"></b></button>
+          <button class="profile-pill"><span class="avatar small">N</span><span>Nidhi</span><span>⌄</span></button>
+        </div>
+      </header>
+      <div id="page-root"></div>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <button data-page="home">⌂<small>Home</small></button>
+    <button data-page="books">▣<small>Books</small></button>
+    <button data-page="outside">↗<small>Outside</small></button>
+    <button data-page="friends">♧<small>Friends</small></button>
+    <button data-page="buddy">✦<small>Buddy</small></button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
